@@ -41,7 +41,7 @@ int main()
     std::cout << "string to find : ";
     std::cin >> s1;
     std::cout << std::endl;
-    std::cout << " string to replace : ";
+    std::cout << "string to replace : ";
     std::cin >> s2;
     std::cout << std::endl;
     std::string out = filename + ".replace";
