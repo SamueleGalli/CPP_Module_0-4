@@ -3,31 +3,43 @@
 void    adding_contact(PhoneBook &phone, int i)
 {
     std::string input;
-    if (i > 7)
-    {
-        i = 7;
-        phone.contact[i].setName("");
-        phone.contact[i].setLname("");
-        phone.contact[i].setNickname("");
-        phone.contact[i].setPhone("");
-        phone.contact[i].setDark("");
-    }
-    std::cout <<"insert your first name =";
-    std::getline(std::cin, input);
-    phone.contact[i].setName(input);
-    std::cout <<"insert your last name =";
-    std::getline(std::cin, input);
-    phone.contact[i].setLname(input);
-    std::cout <<"insert your favorite nickname =";
-    std::getline(std::cin, input);
-    phone.contact[i].setNickname(input);
-    std::cout <<"insert your phone number =";
-    std::getline(std::cin, input);
-    phone.contact[i].setPhone(input);
-    std::cout <<"insert your little dark secret =";
-    std::getline(std::cin, input);
-    phone.contact[i].setDark(input);
+    do {
+        std::cout <<"insert your first name =";
+        std::getline(std::cin, input);
+        phone.contact[i].setName(input);
+        if (input.empty())
+            std::cout << "invalid name" << std::endl;
+    } while (input.empty());
+    do{
+        std::cout <<"insert your last name =";
+        std::getline(std::cin, input);
+        phone.contact[i].setLname(input);
+        if (input.empty())
+            std::cout << "invalid last_name" << std::endl;
+    } while (input.empty());
+    do{
+        std::cout <<"insert your favorite nickname =";
+        std::getline(std::cin, input);
+        phone.contact[i].setNickname(input);
+        if (input.empty())
+            std::cout << "invalid nickname" << std::endl;
+    } while (input.empty());
+    do{
+        std::cout <<"insert your phone_number =";
+        std::getline(std::cin, input);
+        phone.contact[i].setPhone(input);
+        if (input.empty())
+            std::cout << "invalid phone_namber" << std::endl;
+    } while (input.empty());
+    do {
+        std::cout <<"insert your little dark secret =";
+        std::getline(std::cin, input);
+        phone.contact[i].setDark(input);
+        if (input.empty())
+            std::cout << "invalid secret" << std::endl;
+    } while (input.empty());
 }
+
 
 void    resizing(std::string &str, int i)
 {
@@ -57,16 +69,18 @@ void    resize_search(PhoneBook &phone, int i)
     std::cout << std::endl;
 }
 
-void    searching_contact(PhoneBook &phone, int i2)
+void    searching_contact(PhoneBook &phone, int i2, int j)
 {
-    if (i2 <= 0)
+    if (i2 <= 0 && j == 0)
     {
         std::cout << "no contact" << std::endl;
         return ;
     }
     int i = 0;
-    while (i < i2)
+    while (i <= 7)
     {
+        if (phone.contact[i].getName().empty())
+            break ;
         resize_search(phone, i);
         i++;
         if (i > 7)
@@ -106,6 +120,7 @@ void    exiting(PhoneBook phone)
 
 int main()
 {
+    int j = 0;
     int i = 0;
     PhoneBook   phone;
     std::string input;
@@ -121,6 +136,11 @@ int main()
         std::cout << std::endl;
         if (input == "ADD")
         {
+            if (i > 7)
+            {
+                j = 1;
+                i = 0;
+            }
             std::cout << std::endl;
             system("clear");
             adding_contact(phone, i);
@@ -130,7 +150,7 @@ int main()
         {
             std::cout << std::endl;
             system("clear");
-            searching_contact(phone, i);
+            searching_contact(phone, i, j);
         }
         else if (input == "EXIT")
         {
