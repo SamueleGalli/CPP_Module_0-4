@@ -17,3 +17,13 @@ void    Cat::makeSound() const
 {
     std::cout << "miaooooo fuuuu" << std::endl;
 }
+
+Cat  &Cat::operator=(const Cat &c)
+{
+    if (this != &c)
+    {
+        this->type = c.type;
+        this->b = c.b;
+    }
+    return (*this);
+}

@@ -6,6 +6,6 @@
 #include "Brain.hpp"
 int main()
 {
-/*    Animal *a = new Animal("topolino");
-    Animal *a = new Animal();*/
+    /*Animal *a;
+    a = new Animal();*/
 }

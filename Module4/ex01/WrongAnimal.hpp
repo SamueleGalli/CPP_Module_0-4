@@ -9,11 +9,11 @@ class WrongAnimal
         std::string type;
     public:
         std::string getType() const;
-        virtual void makeSound() const;
+        void makeSound() const;
         
         WrongAnimal(std::string type_wa);
         WrongAnimal();
-        virtual ~WrongAnimal();
+        ~WrongAnimal();
 };
 
 #endif

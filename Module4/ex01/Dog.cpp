@@ -17,3 +17,13 @@ void    Dog::makeSound() const
 {
     std::cout << "bau bau" << std::endl;
 }
+
+Dog  &Dog::operator=(const Dog &d)
+{
+    if (this != &d)
+    {
+        this->type = d.type;
+        this->b = d.b;
+    }
+    return (*this);
+}

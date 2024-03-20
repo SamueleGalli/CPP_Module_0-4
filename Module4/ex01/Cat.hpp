@@ -9,6 +9,7 @@ class Cat : public Animal, public Brain
         void makeSound() const;
         Brain *b;
     public:
+        Cat &operator=(const Cat &c);
         Cat();
         ~Cat();
 };
