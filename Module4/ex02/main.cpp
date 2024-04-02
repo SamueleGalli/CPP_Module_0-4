@@ -1,4 +1,4 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
@@ -6,6 +6,6 @@
 #include "Brain.hpp"
 int main()
 {
-    /*Animal *a;
-    a = new Animal();*/
+    /*AAnimal *a;
+    a = new AAnimal();*/
 }

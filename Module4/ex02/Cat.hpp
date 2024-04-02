@@ -1,16 +1,18 @@
 #ifndef CAT_HPP
 #define CAT_HPP
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal, public Brain
+class Cat : public AAnimal, public Brain
 {
     private:
         void makeSound() const;
         Brain *b;
     public:
-        Cat();
-        ~Cat();
+    Cat &operator=(const Cat &c);
+    Cat();
+    Cat(const Cat &C);
+    ~Cat();
 };
 
 #endif

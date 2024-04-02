@@ -9,9 +9,10 @@ class Cat : public Animal, public Brain
         void makeSound() const;
         Brain *b;
     public:
-        Cat &operator=(const Cat &c);
-        Cat();
-        ~Cat();
+    Cat &operator=(const Cat &c);
+    Cat();
+    Cat(const Cat &C);
+    ~Cat();
 };
 
 #endif

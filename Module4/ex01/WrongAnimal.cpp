@@ -1,5 +1,12 @@
 #include "WrongAnimal.hpp"
 
+WrongAnimal::WrongAnimal(const WrongAnimal &WA)
+{
+    std::cout << "copy construtor Wrong Animal" << std::endl;
+    if (this != &WA)
+        *this = WA;
+}
+
 WrongAnimal::WrongAnimal(std::string type_wa)
 {
     std::cout << "giving " << type_wa << "name to a wrong animal" << std::endl;
@@ -24,4 +31,13 @@ std::string WrongAnimal::getType() const
 void    WrongAnimal::makeSound() const
 {
     std::cout << "make an invalid Animal sound" << std::endl;
+}
+
+
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &WA)
+{
+    std::cout << "copy assignment operator Wrong Animal" << std::endl;
+    if (this != &WA)
+        this->type = WA.type;
+    return (*this);
 }

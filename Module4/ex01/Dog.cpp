@@ -20,10 +20,18 @@ void    Dog::makeSound() const
 
 Dog  &Dog::operator=(const Dog &d)
 {
+    std::cout << "copy assignemnt operator Dog" << std::endl;
     if (this != &d)
     {
         this->type = d.type;
         this->b = d.b;
     }
     return (*this);
+}
+
+Dog::Dog(const Dog &D)
+{
+    std::cout << "copy constructor Dog" << std::endl;
+    if (this != &D)
+        *this = D;
 }

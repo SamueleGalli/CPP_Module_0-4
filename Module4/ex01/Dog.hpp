@@ -10,8 +10,9 @@ class Dog : public Animal , public Brain
         Brain *b;
     public:
     Dog    &operator=(Dog const &d);
-        Dog();
-        ~Dog();
+    Dog();
+    Dog(const Dog &D);
+    ~Dog();
 };
 
 #endif

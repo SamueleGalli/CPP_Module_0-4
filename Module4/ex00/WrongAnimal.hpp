@@ -12,6 +12,8 @@ class WrongAnimal
         void makeSound() const;
         
         WrongAnimal(std::string type_wa);
+        WrongAnimal(const WrongAnimal &WA);
+        WrongAnimal &operator=(const WrongAnimal &WA);
         WrongAnimal();
         ~WrongAnimal();
 };

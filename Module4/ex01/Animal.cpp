@@ -1,4 +1,11 @@
-#include "Animal.hpp"
+#include "A_Animal.hpp"
+
+Animal::Animal(const Animal &A)
+{
+    std::cout << "copy constructor Animal" << std::endl;
+    if (this != &A)
+        *this = A;
+}
 
 Animal::Animal()
 {
@@ -24,4 +31,14 @@ const std::string Animal::getType() const
 void   Animal::makeSound() const
 {
     std::cout << "make no sound" << std::endl;
+}
+
+Animal  &Animal::operator=(const Animal &A)
+{
+    std::cout << "copy assignment operator Animal" << std::endl;
+    if (this !=&A)
+    {
+        this->type = A.type;
+    }
+    return (*this);
 }

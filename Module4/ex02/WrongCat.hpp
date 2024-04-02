@@ -8,7 +8,8 @@ class WrongCat : public WrongAnimal
         void makeSound() const;
     public:
         WrongCat();
-        WrongCat(std::string name_cat);
+        WrongCat(const WrongCat &WC);
+        WrongCat    operator=(const WrongCat &WC);
         ~WrongCat();
 };
 
