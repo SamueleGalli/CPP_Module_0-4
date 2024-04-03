@@ -9,6 +9,9 @@ class FragTrap : public ClapTrap
         ~FragTrap();
 
         void    highFiveGuys(void);
+        FragTrap();
+        FragTrap(const FragTrap &FT);
+        FragTrap  &operator=(const FragTrap &FT);
 };
 
 #endif

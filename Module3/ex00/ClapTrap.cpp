@@ -1,5 +1,17 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap()
+{
+    std::cout << "creating trap with no name" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &CT)
+{
+    std::cout << "copy constructor called" << std::endl;
+    if (this != &CT)
+        *this = CT;
+}
+
 ClapTrap::ClapTrap(std::string name_trap)
 {
     std::cout << "assembling trap" << std::endl;
@@ -43,4 +55,17 @@ void    ClapTrap::beRepaired(unsigned int amount)
     hit_point = hit_point + amount;
     energy_point--;
     std::cout << "ClapTrap " << name << " is repairig itself for " << amount << std::endl;
+}
+
+ClapTrap  &ClapTrap::operator=(const ClapTrap &CT)
+{
+    std::cout << "copy assignment operator ClapTrap" << std::endl;
+    if (this !=&CT)
+    {
+        this->name = CT.name;
+        this->hit_point = CT.hit_point;
+        this->energy_point = CT.energy_point;
+        this->attack_damage = CT.attack_damage;
+    }
+    return (*this);
 }

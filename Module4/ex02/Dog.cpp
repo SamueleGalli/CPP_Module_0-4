@@ -2,7 +2,7 @@
 
 Dog::Dog()
 {
-    b = new Brain();
+    Brain b;
     type = "dog";
     std::cout << "finded a stray Dog" << std::endl;
 }
@@ -10,7 +10,6 @@ Dog::Dog()
 Dog::~Dog()
 {
     std::cout << "killing doggy sorry" << std::endl;
-    delete b;
 }
 
 void    Dog::makeSound() const

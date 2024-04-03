@@ -23,3 +23,30 @@ void    ScavTrap::guardGate()
 {
     std::cout << "ScavTrap entered in Gate keeper mode" << std::endl; 
 }
+
+ScavTrap::ScavTrap()
+{
+    std::cout << "creating ScavTrap with no name" << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &ST)
+{
+    std::cout << "copy eredited ScavTrap" << std::endl;
+    if (this != &ST)
+    {
+        *this = ST;
+    }
+
+}
+
+ScavTrap  &ScavTrap::operator=(const ScavTrap &ST)
+{
+    if (this != &ST)
+    {
+        this->name = ST.name;
+        this->hit_point = ST.hit_point;
+        this->energy_point = ST.energy_point;
+        this->attack_damage = ST.attack_damage;
+    }
+    return (*this);
+}

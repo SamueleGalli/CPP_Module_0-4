@@ -15,8 +15,10 @@ class ClapTrap
         void    takeDamage(unsigned int amount);
         void    beRepaired(unsigned int amount);
         
-        ClapTrap();
         ClapTrap(std::string name_trap);
+        ClapTrap();
+        ClapTrap(const ClapTrap &CT);
+        ClapTrap  &operator=(const ClapTrap &CT);
         ~ClapTrap();
 };
 

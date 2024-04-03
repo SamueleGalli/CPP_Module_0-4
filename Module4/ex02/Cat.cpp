@@ -2,7 +2,7 @@
 
 Cat::Cat()
 {
-    b = new Brain();
+    Brain b;
     type = "cat";
     std::cout << "finded a stray cat" << std::endl;
 }
@@ -10,7 +10,6 @@ Cat::Cat()
 Cat::~Cat()
 {
     std::cout << "killing Cat sorry" << std::endl;
-    delete b;
 }
 
 Cat::Cat(const Cat &C)
