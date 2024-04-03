@@ -26,9 +26,9 @@ int main()
     {
         delete a[i];
     }
-    /*Cat c;
+    /*Dog basic;
     {
-        Cat tmp = c;
+        Dog tmp = basic;
     }*/
     return 0;
 }
