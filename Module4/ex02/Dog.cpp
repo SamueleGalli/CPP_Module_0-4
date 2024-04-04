@@ -1,36 +1,41 @@
 #include "Dog.hpp"
 
-Dog::Dog()
+//constructor
+Dog::Dog() : b(new Brain())
 {
-    Brain b;
-    type = "dog";
+    this->type = "dog";
     std::cout << "finded a stray Dog" << std::endl;
 }
 
-Dog::~Dog()
+Dog::Dog(const Dog &D) : AAnimal(D), Brain(*D.b), b(new Brain(*D.b))
 {
-    std::cout << "killing doggy sorry" << std::endl;
+    std::cout << "copy constructor Dog" << std::endl;
+    if (this != &D)
+        *this = D;
 }
 
+//function
 void    Dog::makeSound() const
 {
     std::cout << "bau bau" << std::endl;
 }
 
-Dog  &Dog::operator=(const Dog &d)
+//operator overload
+Dog  &Dog::operator=(const Dog &D)
 {
     std::cout << "copy assignemnt operator Dog" << std::endl;
-    if (this != &d)
+    if (this != &D)
     {
-        this->type = d.type;
-        this->b = d.b;
+        this->type = D.type;
+        delete b;
+        this->b = new Brain(*D.b);
     }
     return (*this);
 }
 
-Dog::Dog(const Dog &D)
+//destructor
+Dog::~Dog()
 {
-    std::cout << "copy constructor Dog" << std::endl;
-    if (this != &D)
-        *this = D;
+    delete b;
+    std::cout << "killing doggy sorry" << std::endl;
 }

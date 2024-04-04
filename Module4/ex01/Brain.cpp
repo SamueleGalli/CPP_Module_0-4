@@ -1,5 +1,11 @@
 #include "Brain.hpp"
 
+//constructor
+Brain::Brain()
+{
+    std::cout << "creating big brain" << std::endl;
+}
+
 Brain::Brain(const Brain &B)
 {
 
@@ -7,24 +13,22 @@ Brain::Brain(const Brain &B)
     if (this != &B)
         *this = B;
 }
-Brain::Brain()
-{
-    std::cout << "creating big brain" << std::endl;
-}
 
-Brain::~Brain()
-{
-    std::cout << "destroing Brain" << std::endl;
-}
-
+//operator overload
 Brain   &Brain::operator=(const Brain &B)
 {
     if (this != &B)
     {
-        for (int i = 0; i <= 100; i++)
+        for (int i = 0; i < 100; i++)
         {
             this->ideas[i] = B.ideas[i];
         }
     }
     return (*this);
+}
+
+//destructor
+Brain::~Brain()
+{
+    std::cout << "destroying Brain" << std::endl;
 }
